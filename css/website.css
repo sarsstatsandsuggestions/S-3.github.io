@@ -1,338 +1,338 @@
-<div class="container">
+*{margin: 0; padding: 0; outline: 0}
 
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> 
+/* RWD Img */
+/***********************************/
+img{max-width: 100%}
+.container{max-width: 2560px; margin: 0 auto; padding: 0 20px}
+.image{max-width: 100%}
 
-<!--  The Intro
------------------------------------------->
-  <section>
-   <!--picture and bio-->
-    <div class="title" id="title">
-<a href=""><img class="pcpic" src="https://cdn.glitch.global/1437bd7f-3fc9-4ac0-a66c-059a6ff113cb/S%5E3.png?v=1656533177401" alt="MEUGE9764.jpg" border="0"></a>
-      
-      <br />
-        <h1> S^3 : SARS  stats  suggestions</h1>
-      <h3>Team 6 | Kode with klossy  <br /> Priya Kulkarni | 
-          Naomi Mutebi | Pragya Agarwal</a> <br> &amp; <br /> Covid 19</a></a> <br />  resource accessibility<br /></h3>
+/* Resources */
+/***********************************/
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Dosis);
+@font-face {
+  font-family: 'Gloria Hallelujah';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Gloria Hallelujah'), local('GloriaHallelujah'), url(http://themes.googleusercontent.com/static/fonts/gloriahallelujah/v5/CA1k7SlXcY5kvI81M_R28Y5mSNQmgKshuii2YddNQzE.woff) format('woff');/*Oh, fancy. To be used only if needed*/
+};
 
-    </div>
-   <!--navigation bar-->  
-    <section class="et-hero-tabs">
-    <h3>
-    <div class="et-hero-tabs-container">
-      <a class="et-hero-tab" href="#">|hello|</a>
-      <a class="et-hero-tab" href="#about">|about|</a>
-       <a class="et-hero-tab" href="#data">|data|</a>
-      <a class="et-hero-tab" href="#resources">|resources|</a>
-      <a class="et-hero-tab" href="#maps">|maps|</a>
-      <a class="et-hero-tab" href="#team">|team|</a>
-      <span class="et-hero-tab-slider"></span>
-      </h3>
-    </div>
-  </section>
-  </div>
-   <!--space after nav bar-->
-      <ul class="nav nav-pills nav-stacked">
-        <li class="active">
-          <a href="#space"></i>&nbsp;</a>
-        </li>
-        <li>
-          <a href="#space"></i>&nbsp;</a>
-        </li>
-      </ul>
-    </nav>
-  </section>
- <!--first parllax image-->
-  <section class="pbackground">
-      <div class="parallax-one parallax image" id="about">
-        <h2 class="about">About</h2>
-      </div>
-  </section>
-<div class="clear"></div><!-- clear -->
-<!--   TO DATE
------------------------------------------->
-  <section>
-    <div class="block">
-      <img src="https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-25-128.png" alt="" /><br>
-      <div class="heading">
-        <h1>40.6 million</h1>
-      </div>
-        <p>Most of the 40.6 million people living in poverty within the United States face inequities in access to covid related health care. One in five New Yorkers (20 PERCENT) who lost employment income because
-of COVID-19 were already in poverty, more than twice the rates of those who transitioned to remote work and did not lose employment income (9 PERCENT).<br><br /> <br><br />"“This pandemic has magnified every existing inequality in our society – like systemic racism, gender inequality, and poverty” -Melinda Gates, The Gates Foundation </p><br /><br /><br />
+/* Helpers */
+/***********************************/
+.margin-top-10 {padding-top:10px;}
+.margin-bot-10 {padding-bottom:10px;}
+
+/* Tooltips */
+/***********************************/
+a[data-tooltip] {position: relative;}
+a[data-tooltip]::before,
+a[data-tooltip]::after {position: absolute;display: none; opacity: 0.85;}
+/*
+   * using data-tooltip instead of title so we 
+   * don't have the real tooltip overlapping
+   * we don't want the text to wrap */
+a[data-tooltip]::before {
+  content: attr(data-tooltip);
+  background: MidnightBlue;
+  color: #fff;
+  font-size: 13px;
+  padding: 5px;
+  border-radius: 5px;
+  white-space: nowrap;
+  text-decoration: none;
+}
+a[data-tooltip]::after {
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  content: '';
+}
+
+a[data-tooltip]:hover::before,
+a[data-tooltip]:hover::after {display: block;}
+
+/** positioning **/
+/* nav bar*/
+.et-hero-tabs,
+.et-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    position: relative;
+    background: #a2dad3;
+		text-align: center;
+		padding: 0 2em;
+    h3 {
+        font-size: 1rem;
+        letter-spacing: 0.3rem;
+        opacity: 0.6;
+    }
+}
+/* left tooltip */
+a[data-tooltip][data-placement="left"]::before {
+  top: -25%;
+  right: 100%;
+  margin-right: 10px;
+}
+a[data-tooltip][data-placement="left"]::after {
+  border-left-color: MidnightBlue;
+  border-right: none;
+  top: 50%;
+  right: 100%;
+  margin-top: -6px;
+  margin-right: 4px;
+}
+
+/* right tooltip */
+a[data-tooltip][data-placement="right"]::before {
+  top: -25%;
+  left: 100%;
+  margin-left: 10px;
+}
+a[data-tooltip][data-placement="right"]::after {
+  border-right-color: MidnightBlue;
+  border-left: none;
+  top: 50%;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: 4px;
+}
+
+/* top tooltip */
+a[data-tooltip][data-placement="top"]::before {
+  bottom: 100%;
+  left: 0;
+  margin-bottom: 10px;
+}
+a[data-tooltip][data-placement="top"]::after {
+  border-top-color: MidnightBlue;
+  border-bottom: none;
+  bottom: 100%;
+  left: 10px;
+  margin-bottom: 4px;
+}
+
+/* bottom tooltip */
+a[data-tooltip][data-placement="bottom"]::before {
+  top: 100%;
+  left: 0;
+  margin-top: 10px;
+}
+a[data-tooltip][data-placement="bottom"]::after {
+  border-bottom-color: MidnightBlue;
+  border-top: none;
+  top: 100%;
+  left: 10px;
+  margin-top: 4px;
+}
+
+/* Typography */
+/***********************************/
+body{font-size:16px;}
+h1 {font-family: 'Noto Sans', sans-serif; font-size:2.3em; font-weight:400; text-transform: uppercase; color:black; padding:0; margin:0;margin-bottom: 30px;overflow: hidden;}
+h2 {font-family: 'Noto Sans', sans-serif; font-size:2.5em; letter-spacing:20px; text-align:center; color:white; font-weight:400; text-transform:uppercase; z-index:10; opacity:.8;overflow: hidden;}
+h3 {font-family: 'Noto Sans', sans-serif; font-size:1.8em; line-height:1.9rem; font-weight:300; letter-spacing:6px; text-transform: uppercase; color:black;overflow: hidden;}
+h4 {font-family: 'Noto Sans', sans-serif; font-size:1.6em; line-height:1.9rem; font-weight:300; letter-spacing:1px; text-transform: uppercase; color:gainsboro;overflow: hidden;}  
+p, li, .Scroll {font-family:'Source Sans Pro', sans-serif; font-weight:400; font-size:1.5em; line-height:1.5em;letter-spacing:1px; margin-bottom: 10px;}
+ul {list-style-type: square; margin-left: 1em; padding-left: 1.5}
+.heading{text-align:center; font-family: 'Noto Sans'; padding: 2em;}
+.key{color:grey; font-family:'Source Sans Pro', sans-serif; font-weight:400; overflow: hidden;}
+a:link, a:visited, a:active {color: darkslateblue; text-decoration: none; text-decoration-style:dotted;} 
+a:hover {color: orangered; text-decoration: none;}
+quote{font-family:'Gloria Hallelujah', sans-serif; font-weight:400; font-size:2.5em; line-height:2.7em; color: grey; font-style:italic;}
+#projects {font-family:'Dosis', sans-serif; font-weight:400; font-size:2em; line-height:1.5em; color: grey; text-align: center;vertical-align: middle; display: block; margin-bottom: 1.6em;}
+.likes{line-height:-30px; font-family: 'Source Sans Pro';}
+.Scroll{text-align: center; color: white;}
+a.white:link, a.white:visited, a.white:active {color: white; text-decoration: none;}
+.title h1{font-size: 3em;}
+.title h3{font-size: 1.3em;}
+
+/* Icons & Images */
+/***********************************/
+.pcpic{border-radius:180px;}
+img{float: center; margin: 0 auto; display: block; margin-left: auto; margin-right: auto; padding: 3rem;}
+.Scroll{margin: 0 auto;} 
+.social li {cursor: pointer;position: relative;list-style-type: none; margin-right: 10px;display: inline-block;font-weight: 300;font-size:14px;font-family: "Open Sans", sans-serif;}
+.social a {float: left;text-decoration: none;}
+.social i {width: 38px;}
+.social .icon {border-radius: 19px;width: 40px;height: 40px;line-height: 38px;position: relative;text-align: center;transition: width .25s ease-in-out, background-color .25s ease-in-out; box-shadow: rgba(0, 0, 0, .28) 0 2px 3px; color: #fafafa;overflow: hidden;}
+.social li:hover .icon {width: 100%;padding-right: 12px;}
+.wordpress {background-color: #1E8CBE;}
+.twitter {background-color: #00aced;}
+.codepen {background-color: #222222;}
+/*.google-plus {background-color: #dd4b39;}*/
+.linkedin {background-color: #007bb6;}
+.github {background-color: #000;}
+/*.pinterest {background-color: #cb2027;}*/
+.flickr {background-color: #ff0084;}
+.behance {background-color: #000000;}
+
+/* Container */
+/***********************************/
+body, .container {margin:0; padding:0;background: rgb(255,255,255);}
 
 
-      <p class="line-break margin-top-10"></p><br /><br />
+/* Section - Title */
+/***********************************/
+.title {background: white; padding: 60px; margin:0 auto; text-align:center;}
+.title h1 {font-size:35px; letter-spacing:2px;}
 
-      <div class="heading">
-        <h1>Problem statement</h1>
-      </div>
-        <p class="margin-top-10">The COVID-19 outbreak in the United States has put a spotlight on economic inequalities and a fragile social safety net that leaves vulnerable communities to bear the economic brunt of the crisis. While the virus infects people regardless of wealth, the poor will be most affected due to long standing segregation by income and race, reduced economic mobility, and the high cost of medical care. </p><br /><br />
-      
-      
-   <p class="line-break margin-top-10"></p><br /><br />
+/* Section - Block */
+/***********************************/
+.block {background: rgb(255,255,255); padding: 15px; width:90%; margin:0 auto; text-align:justify;}
+.block-gray {background: #f2f2f2;padding: 60px;}
+.section-overlay-mask {position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: black; opacity: 0.70;}
 
-      <div class="heading">
-        <h1>So...</h1>
-      </div>
-        <p class="margin-top-10">How can we as a team help/support low income households and individuals to have access to Covid-19 testing sites and resources within New York City?  
- </p><br /><br />
-      
-      <quote id="projects">"advocate for the change you want to live with"</quote>
+/* Section - Parallax */
+/***********************************/
 
-    </div>
-  </section>
+.parallax{
+  padding-top: 200px;
+  padding-bottom: 200px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 25em;
+  background-attachment: fixed;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -ms-background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;}
 
-  <section>
-    <div class="parallax-two parallax image" id="data">
-      <h2>data</h2>
-    </div>
-  </section>
-<div class="clear"></div><!-- clear -->
-<!--  INDUSTRY SUMMARY
------------------------------------------->
-  <section>
-    <div class="block">
-      <img src="https://cdn.glitch.global/1437bd7f-3fc9-4ac0-a66c-059a6ff113cb/7106362_layout_infographic_data_ui_element_icon.png?v=1656560937137" alt=""" />
-      
-        <p class="line-break margin-top-10"></p><br /><br />
-      
-       <img src="https://cdn.glitch.global/1437bd7f-3fc9-4ac0-a66c-059a6ff113cb/Screenshot%202022-06-30%202.41.56%20PM%20-%20Display%201.png?v=1656623790896" alt=""" />                                     
-      <div class="heading">
-      <h1>covid care usage</h1>
-      </div>
-      <!-- <em></em> is italics <strong> is bold -->
-      <p>
-        The percentage of adults reporting they avoided care for COVID-19 due to potential cost, by neighborhood poverty, April 16-23, 2020, New York City
+.parallax-one{
+  background-image: url(https://cdn.glitch.global/1437bd7f-3fc9-4ac0-a66c-059a6ff113cb/Screenshot%202022-06-29%203.21.33%20PM%20-%20Display%201.png?v=1656534195104); overflow: hidden;
+}
+  
+.parallax-two {         
+  background-image: url(https://cdn.glitch.global/1437bd7f-3fc9-4ac0-a66c-059a6ff113cb/Screenshot%202022-06-29%204.34.24%20PM%20-%20Display%201.png?v=1656538577116);url(https://cdn.glitch.global/1437bd7f-3fc9-4ac0-a66c-059a6ff113cb/Screenshot%202022-06-29%203.59.51%20PM%20-%20Display%201.png?v=1656536554425);
+    overflow: hidden;
+}
 
+.parallax-three {
+  background-image: url(https://cdn.glitch.global/1437bd7f-3fc9-4ac0-a66c-059a6ff113cb/Screenshot%202022-06-29%204.41.28%20PM%20-%20Display%201.png?v=1656538947182);
+    overflow: hidden;
+}
 
-        </p><br /><br /><br />
+.parallax-four {
+  background-image:           url(https://cdn.glitch.global/1437bd7f-3fc9-4ac0-a66c-059a6ff113cb/Screenshot%202022-06-29%204.50.55%20PM%20-%20Display%201.png?v=1656539505425);
+    overflow: hidden;
+ }
 
-      <p class="line-break margin-top-10"></p><br /><br />
-                                         
- <img src="https://cdn.glitch.global/1437bd7f-3fc9-4ac0-a66c-059a6ff113cb/Screenshot%202022-06-30%202.41.50%20PM%20-%20Display%201.png?v=1656623777022" alt=""" />
-      <div class="heading">
-      <h1>covid related anxiety</h1>
-      </div>
-      <p>
-        data sets are a collection of related sets of information that is composed of separate elements but can be manipulated as a unit by a computer.<br />
-      
-      <br /><br /><br />
+.parallax-five {
+  background-image:           url(https://cdn.glitch.global/1437bd7f-3fc9-4ac0-a66c-059a6ff113cb/Screenshot%202022-06-29%203.59.51%20PM%20-%20Display%201.png?v=1656536554425);
+    overflow: hidden;
+}
 
-       <p class="line-break margin-top-10"></p><br /><br />
+.parallax-six {
+  padding-top: 20px;
+  padding-bottom: 30px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 10rem;
+  background-color: grey;
+  background-attachment: fixed;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -ms-background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;}
+.parallax-seven {
+  padding-top: 200px;
+  padding-bottom: 200px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 25rem;
+  background-color: #2D3339;
+  background-attachment: fixed;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -ms-background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;}
 
-       <img src="https://cdn.glitch.global/1437bd7f-3fc9-4ac0-a66c-059a6ff113cb/donutchart.png?v=1656623806534" alt=""" />
-      <div class="heading">
-      <h1>public transportation usage</h1>
-      </div>
-      <p>Percentage of adults reporting public transportation use in the past seven days by race/ethnicity and neighborhood and household income, April 16-23, 2020, New York City </p><br />
-     
-    </div><br />
-  </section>
+/* Extras */
+/***********************************/
+.line-break {border-bottom:1px solid grey; width: 190px; margin:0 auto;}
 
-  <section>
-    <div class="parallax-three parallax image" id="resources">
-      <h2>resources</h2>
-    </div>
-  </section>
-<div class="clear"></div><!-- clear -->
+/* Media Queries */
+/***********************************/
+@media screen and (max-width: 768px) {
+    *{margin: 0; padding: 0; outline: 0}
+    img, .image{max-width: 100%}
+    .container{max-width: 2560px; margin: 0 auto;}
+    .block {padding: 10px; width:90%;}
+    img{margin: 0px auto; display: block; padding: 20px 0 20px 0; height: 10em; width: 10em;}
+    .parallax-one, .parallax-two, .parallax-three, .parallax-four, .parallax-five, .parallax-six, .parallax-seven {padding-top:13em; padding-bottom:13em;}
+    .about{text-align: center;margin: 0 auto; position: absolute; padding-left: 35%;}
+    .pbackground{width:  767px; margin: 0px auto;}
+    .container, .image{display: block; height: auto; width: 100%;}
+    .parallax-seven quote{font-size: 1.6em;}
+    .title h1{font-size: 2em;}
+    h1{font-size: 1.6em;overflow: hidden;}
+    h2{line-height:2.6rem; height: auto;overflow: hidden; font-size: 2em;}
+    h3{font-size: 1em; letter-spacing:3px;}
+    .title img{height: 12em; width: 12em;}
+    .title h3{font-size: 1.2em;}
+    .block img{height: 5em; width: 5em;}
+    p, li{font-size: 1.1em; line-height: 1.3em;}
+    ul {list-style-type: square; margin-left: .7em; padding-left: 1;}
+    h1, h2, h3, h4, p, ul, li, img, div{overflow: hidden;}
+}
+
+@media (max-width:650px){
+    .about{text-align: center;margin: 0 auto; position: absolute; padding-left: 25%;}
+    .pbackground{width:  650px; margin: 0px auto;}
+    .parallax-seven quote, #projects{font-size: 1.4em; line-height: 1.6em; margin-bottom: 2em;}
+    .title h1{font-size: 2em;}
+    h1{font-size: 1.6em;overflow: hidden;}
+    h2{line-height:1.5rem; height: auto;overflow: hidden; font-size: 1.5em;}
+    h3{font-size: 1em; letter-spacing:2px;}
+    .title img{height: 10.5em; width: 10.5em;}
+    .title h3{font-size: 1em;}
+    .block img{height: 5em; width: 5em;}
+    p, li{font-size: .9em; line-height: 1.2em;}
+    quote{font-weight:200; font-size:.8em; line-height:.8em; color: grey; font-style:italic;}
+    ul {list-style-type: square; margin-left: .5em; padding-left: .8;}
+    h1, h2, h3, h4, p, ul, li, img, div{overflow: hidden;}
     
-<!--  SKILLS AND EDUCATION
------------------------------------------->
-  <section>
-    <div class="block">
-      <img src="https://cdn.glitch.global/1437bd7f-3fc9-4ac0-a66c-059a6ff113cb/4313115_global_information_news_script_writing_icon%20(1).png?v=1656560454136" alt="" />
-     
-      <p> resource descrip.
-<br /><br />
-        
-      <section>
-  <div class="block"><div>
-        <div class="container">
-<p>New York Covid Guidelines/Precautions:</p><br />
-          <div class="row-fluid">
-          <div class="span6">
-          <li><strong>I</strong> resource</li>
-          <p>
-          <li><strong>II</strong> resource</li>
-          </p>
-            <li><strong>III</strong> resource</li>
-            
-            <br /><br />
-            
-<p>US Covid Guidelines:</p><br />
-            
-          <li><strong>I</strong> resource</li>
-          <p>
-          <li><strong>II</strong> resource</li>
-          </p>
-            <li><strong>III</strong> resource</li>
-            
-            <br /><br />
-<p>New York Clinics:</p><br />
-            
-         <li><strong>I</strong> resource</li>
-          <p>
-          <li><strong>II</strong> resource</li>
-          </p>
-            <li><strong>III</strong> resource</li>
-        </div>
-
-        <div class="span6">
-          <li><strong>I</strong> resource</li>
-          <p>
-          <li><strong>II</strong> resource</li>
-          </p>
-            <li><strong>III</strong> resource</li>
- <br /><br />
-          <br /><br />
-            <br /><br />
-          <li><strong>I</strong> resource</li>
-          <p>
-          <li><strong>II</strong> resource</li>
-          </p>
-            <li><strong>III</strong> resource</li>
-          
- <br /><br />
-           <br /><br />
-          
-          <li><strong>I</strong> resource</li>
-          <p>
-          <li><strong>II</strong> resource</li>
-          </p>
-            <li><strong>III</strong> resource</li>
-        </div>
-            
-<br /><br />
-            
-    </div>
-          
-          <br /><br />
-          
-  </section>
-<div class="clear"></div><!-- clear -->
-<!--  EXPERIENCE
------------------------------------------->
-  <section>
-    <div class="parallax-four parallax image" id="maps">
-      <h2>maps</h2>
-    </div>
-  </section>
-
-  <section>
-    <div class="block">
-      <img src="https://cdn.glitch.global/1437bd7f-3fc9-4ac0-a66c-059a6ff113cb/4781828_direction_gps_location_map_maps_icon%20(2).png?v=1656553203324" alt=" />  
-      
-       <section>
-    <div class="block">
-      <p>Below is a list of locations of COVID testing sites open at/near NYC subway stations. All are for PCR tests and accept walk-ins, though operating hours may vary.
- 
-   <br /><br />
-        
-      <p>Walk-in PCR testing launched at the following MTA sites that remain avalible:</p><br />
-        <ul>
-          <li><strong></strong> Times Square-42nd St (Manhattan) Monday through Sunday, 8 a.m. to 2 p.m.</li>
-          <p>
-          <li><strong></strong> Grand Central Terminal (Manhattan) Monday through Sunday, 3 p.m. to 8 p.m.</li>
-          </p>
-            <li><strong></strong> Penn Station (Manhattan) Monday through Sunday, 3 p.m. to 8 p.m.</li>
-          <li><strong></strong> Broadway Junction (Brooklyn) Monday through Friday, 8 a.m. to 2 p.m.</li>
-          <li><strong></strong> E. 180th St (Bronx) Monday through Friday, 8 a.m. to 2 p.m.</li>
-          <li><strong></strong> Roosevelt Ave (Queens) Monday through Friday, 8 a.m. to 2 p.m.</li>
-          <li><strong></strong> Jamaica-179th St (Queens) Monday through Friday, 2 p.m. to 7 p.m.</li>
-        </ul> <br />
-      <p>The state-funded testing program provides anyone, including those visiting New York, the opportunity to get tested without an appointment.
+}
 
 
-<br /><br />
 
-    </div>
-  </section>
-      
- <!-- MAP EMBED------------------------------------------>
-  <div class="mapouter"><div class="gmap_canvas"><iframe width="1080" height="758" id="gmap_canvas" src="https://maps.google.com/maps?q=New%20York%20City,%20New%20York&t=&z=11&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org"></a><br><style>.mapouter{position:relative;text-align:right;height:758px;width:1080px;}</style><a href="https://www.embedgooglemap.net">how to add google map to website</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:758px;width:1100px;}</style></div></div>
-      
-      <br /><br />
-      
-<section>
-    <div class="block">
-      <img src="https://cdn.glitch.global/1437bd7f-3fc9-4ac0-a66c-059a6ff113cb/new-york-city-metro-subway-map.png?v=1656563526233"alt=""/>
-      
-        <quote id="projects">"advocacy is calling for action"</quote>
-    </div>
-  </section>
-<div class="clear"></div><!-- clear -->
-<!--  LIKES
------------------------------------------->
-    <section>
-    <div class="parallax-five parallax image" id="team">
-      <h2>team</h2>
-    </div>
-  </section>
-<div class="clear"></div><!-- clear -->
-  <section>
-    <div class="block">
 
-          <!--<img src="https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-63-128.png" alt=""/>-->
-          <div class="likes">
- <img src="https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-61-128.png" alt=""/>
-           
-   <p class="line-break margin-top-10"></p><br /><br />
-            <br /><br />
-            
-            <img src="https://cdn.glitch.global/1437bd7f-3fc9-4ac0-a66c-059a6ff113cb/BeFunky-photo%20(6).jpg?v=1656623457346" alt=""/>
-            <h3>Priya Kulkarni</h3><br />
+.row-fluid [class*="span"] {
+  display: block;
+  float: left;
+  width: 100%;
+  min-height: 30px;
+  margin-left: 2.127659574468085%;
+  *margin-left: 2.074468085106383%;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
 
-            <p>words</p>
-            
-            <br /><br />
-     <p class="line-break margin-top-10"></p><br /><br />
-           
+.row-fluid [class*="span"]:first-child {
+  margin-left: 0;
+}
 
-            <img src="https://cdn.glitch.global/1437bd7f-3fc9-4ac0-a66c-059a6ff113cb/Screenshot%202022-06-30%204.00.31%20PM%20-%20Display%202.png?v=1656622915529" alt=""/>
-            <h3>Naomi Mutebi</h3><br />
-
-            <p> Hi! My name is Naomi Mutebi and I am a rising junior at Feather River Charter School in California. My favorite subject to study at school is English and Science. In my free time I like to study business and watch Netflix with the occasional boba run. 
- </p>
-
-            <br /><br />
-     <p class="line-break margin-top-10"></p><br /><br />
-         
-            
-            <img src="https://cdn.glitch.global/1437bd7f-3fc9-4ac0-a66c-059a6ff113cb/BeFunky-photo%20(4).jpg?v=1656568270821" alt=""/>
-            <h3>Pragya Agarwal</h3><br />
-
-            <p>"Hi! My name is Pragya Agarwal and I am a rising sophomore at Santa Susana High School in California. At school, my favorite classes include Robotics & Engineering, English, and Math. In my free time I like to watch Netflix and scroll on Tik Tok. I just finished watching Gilmore Girls & The Summer I Turned Pretty. Now I'm starting the Stranger Things series!"</p>
-            
-            <br /><br />
-     <p class="line-break margin-top-10"></p><br /><br />
-
-        </div>
-      <br /><br />
-      
-        <quote id="projects">"advocacy is calling for action"</quote>
-      
-    </div>
-  </section>
-  <div class="clear"></div><!-- clear -->  
-<!--  going back to the top
-------------------------------------------> 
-      <section>
-      <div class="Scroll">
-        <a id="slowscroll" href="#" class="white">&#60; Top &#62;</a>
-      </div>
-      
-    </div>
-  </section>
-<div class="clear"></div><!-- clear -->
-<!--  source refferal
------------------------------------------->
-    <section>
-      <div class="parallax-seven">
-      <quote>"sources"</quote>
-      <h3>hi</h3>
-      </div>
-      <div class="Scroll">
-        <a id="slowscroll" href="#" class="white">&#60; Top &#62;</a>
-      </div>
-  </section>
-<div class="clear"></div><!-- clear -->
-  </div>
+.row-fluid .span6 {
+  width: 44%;
+  *width: 44%;
+  margin:0px 30px;
+}
